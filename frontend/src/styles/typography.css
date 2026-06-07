@@ -1,1 +1,7 @@
-* { box-sizing: border-box; }
+.font-heading {
+  font-family: "Playfair Display", serif;
+}
+
+.font-body {
+  font-family: "Inter", sans-serif;
+}

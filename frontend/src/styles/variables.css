@@ -1,1 +1,14 @@
-* { box-sizing: border-box; }
+:root {
+  --font-body: "Inter", sans-serif;
+  --font-heading: "Playfair Display", serif;
+
+  --primary: #6b1f1f;
+  --secondary: #d4af37;
+  --accent: #8b5e3c;
+
+  --background: #ffffff;
+  --surface: #f8f5f2;
+
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+}
