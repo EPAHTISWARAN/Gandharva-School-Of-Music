@@ -1,4 +1,23 @@
-const StaggerContainer = () => {
-  return <div>StaggerContainer</div>;
+import { motion } from "framer-motion";
+
+const container = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
 };
-export default StaggerContainer;
+
+export default function StaggerContainer({ children }) {
+  return (
+    <motion.div
+      variants={container}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
+    >
+      {children}
+    </motion.div>
+  );
+}

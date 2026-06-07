@@ -1,4 +1,15 @@
-const Main = () => {
-  return <div>Main</div>;
-};
-export default Main;
+import React from "react";
+import ReactDOM from "react-dom/client";
+
+import App from "./App";
+
+import "@fontsource/inter";
+import "@fontsource/playfair-display";
+
+import "./styles/globals.css";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
