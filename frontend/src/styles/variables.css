@@ -1,14 +1,22 @@
 :root {
-  --font-body: "Inter", sans-serif;
-  --font-heading: "Playfair Display", serif;
+  /* Fonts */
+  --font-heading: "Cormorant Garamond", serif;
+  --font-body: "Poppins", sans-serif;
 
-  --primary: #6b1f1f;
-  --secondary: #d4af37;
-  --accent: #8b5e3c;
+  /* Brand Colors */
+  --primary: #d97706;      /* Deep Orange */
+  --secondary: #f59e0b;    /* Amber */
+  --accent: #fbbf24;       /* Golden Yellow */
 
-  --background: #ffffff;
-  --surface: #f8f5f2;
+  /* Background Gradient */
+  --background-start: #85380f;
+  --background-middle: #b1996e;
+  --background-end: #fde047;
 
+  /* Surfaces */
+  --surface: rgba(255, 255, 255, 0.15);
+
+  /* Text */
   --text-primary: #1f2937;
-  --text-secondary: #6b7280;
+  --text-secondary: #374151;
 }

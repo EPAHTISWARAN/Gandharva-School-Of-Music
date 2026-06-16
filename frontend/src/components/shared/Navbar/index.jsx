@@ -15,9 +15,20 @@ export default function Navbar() {
       window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleEnquiryClick = () => {
+    const section = document.getElementById("enquiry-section");
+
+    if (section) {
+      section.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   return (
     <nav
-      className={`fixed top-0 left-0 z-50 w-full transition-all duration-300 ${
+      className={`fixed top-0 left-0 z-[9999] w-full transition-all duration-300 ${
         scrolled
           ? "bg-white/90 backdrop-blur-md shadow-md"
           : "bg-transparent"
@@ -48,9 +59,13 @@ export default function Navbar() {
             Events
           </Link>
 
-          <Link to="/enquiry">
+          <button
+            type="button"
+            onClick={handleEnquiryClick}
+            className="cursor-pointer bg-transparent border-none p-0 text-inherit hover:text-[var(--primary)]"
+          >
             Enquiry
-          </Link>
+          </button>
         </div>
       </div>
     </nav>
