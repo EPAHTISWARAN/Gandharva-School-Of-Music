@@ -53,7 +53,8 @@ return ( <footer className="bg-gray-900 text-white"> <div className="mx-auto max
 
         <ul className="space-y-2 text-gray-400">
           <li>📍 Pune, Maharashtra</li>
-          <li>📞 +91 XXXXX XXXXX</li>
+          <li>📞 +91 8329195495</li>
+          <li>    +91 9960073357</li>
           <li>✉️ info@gandharvaschool.com</li>
         </ul>
       </div>

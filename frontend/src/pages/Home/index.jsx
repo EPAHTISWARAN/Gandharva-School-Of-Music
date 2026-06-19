@@ -12,7 +12,17 @@ import ScaleIn from "../../components/animations/ScaleIn";
 
 export default function Home() {
   return (
-    <>
+    <div
+      className="min-h-screen"
+      style={{
+        background: `linear-gradient(
+          135deg,
+          var(--background-start) 0%,
+          var(--background-middle) 50%,
+          var(--background-end) 100%
+        )`,
+      }}
+    >
       <Hero />
 
       <SlideUp>
@@ -38,6 +48,6 @@ export default function Home() {
       <ScaleIn>
         <QuickEnquiry />
       </ScaleIn>
-    </>
+    </div>
   );
 }

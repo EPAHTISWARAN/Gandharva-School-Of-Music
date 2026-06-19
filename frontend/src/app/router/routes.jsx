@@ -8,6 +8,10 @@ import About from "../../pages/About";
 import Events from "../../pages/Events";
 import Enquiry from "../../pages/Enquiry";
 
+import VocalMusic from "../../pages/Courses/VocalMusic";
+import InstrumentalMusic from "../../pages/Courses/InstrumentalMusic";
+import Dance from "../../pages/Courses/Dance";
+
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -20,6 +24,18 @@ export const router = createBrowserRouter([
       {
         path: "courses",
         element: <Courses />,
+      },
+      {
+        path: "courses/vocal",
+        element: <VocalMusic />,
+      },
+      {
+        path: "courses/instrumental",
+        element: <InstrumentalMusic />,
+      },
+      {
+        path: "courses/dance",
+        element: <Dance />,
       },
       {
         path: "about",

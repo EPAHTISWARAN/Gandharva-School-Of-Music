@@ -6,39 +6,67 @@ export default function CourseDetails() {
     <section className="bg-gray-50 py-24">
       <Container>
         <SectionHeading
-          subtitle="Learning Process"
-          title="How We Help You Grow"
-          description="A structured learning approach focused on practical skills and performance."
+          subtitle="Programs"
+          title="Our Course Offerings"
+          description="Choose from Singing, Instrumental Music and Dance programs."
         />
 
-        <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          <div className="rounded-2xl bg-white p-6 shadow-md">
-            <h3 className="font-semibold">Foundation</h3>
-            <p className="mt-3 text-gray-600">
-              Learn fundamentals and build strong basics.
-            </p>
+        <div className="mt-16 space-y-12">
+
+          {/* Singing */}
+          <div
+            id="singing"
+            className="rounded-3xl bg-white p-8 shadow-md scroll-mt-32"
+          >
+            <h2 className="text-3xl font-bold text-[var(--primary)]">
+              🎤 Singing
+            </h2>
+
+            <ul className="mt-4 space-y-2 text-lg">
+              <li>• Hindustani Classical Vocal</li>
+              <li>• Semi-Classical Music</li>
+              <li>• Light Music</li>
+              <li>• Bollywood Singing</li>
+              <li>• Bhajans & Devotional Music</li>
+            </ul>
           </div>
 
-          <div className="rounded-2xl bg-white p-6 shadow-md">
-            <h3 className="font-semibold">Practice</h3>
-            <p className="mt-3 text-gray-600">
-              Guided sessions and regular assignments.
-            </p>
+          {/* Instrumental */}
+          <div
+            id="instrumental"
+            className="rounded-3xl bg-white p-8 shadow-md scroll-mt-32"
+          >
+            <h2 className="text-3xl font-bold text-[var(--primary)]">
+              🎹 Instrumental Music
+            </h2>
+
+            <ul className="mt-4 space-y-2 text-lg">
+              <li>• Guitar</li>
+              <li>• Keyboard</li>
+              <li>• Harmonium</li>
+              <li>• Tabla</li>
+              <li>• Flute</li>
+              <li>• Violin</li>
+            </ul>
           </div>
 
-          <div className="rounded-2xl bg-white p-6 shadow-md">
-            <h3 className="font-semibold">Performance</h3>
-            <p className="mt-3 text-gray-600">
-              Participate in events and showcases.
-            </p>
+          {/* Dance */}
+          <div
+            id="dance"
+            className="rounded-3xl bg-white p-8 shadow-md scroll-mt-32"
+          >
+            <h2 className="text-3xl font-bold text-[var(--primary)]">
+              💃 Dance
+            </h2>
+
+            <ul className="mt-4 space-y-2 text-lg">
+              <li>• Kathak</li>
+              <li>• Bharatanatyam</li>
+              <li>• Bollywood Dance</li>
+              <li>• Folk Dance</li>
+            </ul>
           </div>
 
-          <div className="rounded-2xl bg-white p-6 shadow-md">
-            <h3 className="font-semibold">Certification</h3>
-            <p className="mt-3 text-gray-600">
-              Earn certificates and track progress.
-            </p>
-          </div>
         </div>
       </Container>
     </section>

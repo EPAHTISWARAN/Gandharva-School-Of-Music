@@ -1,6 +1,5 @@
 import PageBanner from "../../components/shared/PageBanner";
 import CourseGrid from "./CourseGrid";
-import CourseDetails from "./CourseDetails";
 
 export default function Courses() {
   return (
@@ -11,7 +10,6 @@ export default function Courses() {
       />
 
       <CourseGrid />
-      <CourseDetails />
     </>
   );
 }

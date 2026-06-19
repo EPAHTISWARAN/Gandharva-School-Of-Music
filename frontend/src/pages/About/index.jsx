@@ -1,19 +1,24 @@
-import JourneyTimeline from "./JourneyTimeline";
-import FacultySection from "./FacultySection";
+import PageBanner from "../../components/shared/PageBanner";
+import DirectorSection from "./DirectorSection";
 import Achievements from "./Achievements";
 import Certifications from "./Certifications";
 
 export default function About() {
   return (
     <>
-    <PageBanner
+      <PageBanner
         title="About Us"
-        subtitle="Our journey, faculty and achievements."
-    />
-      <JourneyTimeline />
-      <FacultySection />
-      <Achievements />
+        subtitle="Discover our journey, our passion for music and dance, and the people who inspire excellence every day."
+      />
+
+      {/* Certifications */}
       <Certifications />
+
+      {/* Director Section */}
+      <DirectorSection />
+
+      {/* Achievements */}
+      <Achievements />
     </>
   );
 }
