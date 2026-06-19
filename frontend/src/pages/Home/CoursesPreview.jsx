@@ -9,18 +9,21 @@ export default function CoursesPreview() {
       description:
         "Learn Indian Classical and Bollywood Music from experienced instructors.",
       icon: "🎤",
+      link: "/courses/vocal",
     },
     {
       title: "Instrumental",
       description:
         "Master Guitar, Keyboard, Tabla, Harmonium, Flute and more.",
       icon: "🎹",
+      link: "/courses/instrumental",
     },
     {
       title: "Dance",
       description:
         "Explore Bharatanatyam, Kathak and Bollywood Dance styles.",
       icon: "💃",
+      link: "/courses/dance",
     },
   ];
 
@@ -40,6 +43,7 @@ export default function CoursesPreview() {
               title={course.title}
               description={course.description}
               icon={course.icon}
+              link={course.link}
             />
           ))}
         </div>

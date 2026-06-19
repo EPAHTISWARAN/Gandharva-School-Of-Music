@@ -1,5 +1,4 @@
 import Container from "../../components/shared/Container";
-import { Link } from "react-router-dom";
 
 export default function AboutPreview() {
   return (
@@ -21,12 +20,12 @@ export default function AboutPreview() {
             experiences for students of all age groups.
           </p>
 
-          <Link
-            to="/about"
-            className="mt-8 inline-block rounded-xl bg-[var(--primary)] px-6 py-3 text-white"
+          <a
+            href="#enquiry-section"
+            className="mt-8 inline-block rounded-xl bg-[var(--primary)] px-6 py-3 text-white transition-all duration-300 hover:opacity-90"
           >
-            Learn More
-          </Link>
+            ENQUIRE NOW
+          </a>
         </div>
       </Container>
     </section>

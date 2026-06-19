@@ -1,7 +1,10 @@
+import { useState } from "react";
 import Container from "../../components/shared/Container";
 import SectionHeading from "../../components/shared/SectionHeading";
 
 export default function QuickEnquiry() {
+  const [course, setCourse] = useState("");
+
   return (
     <section
       id="enquiry-section"
@@ -61,12 +64,53 @@ export default function QuickEnquiry() {
                   className="rounded-xl border p-4"
                 />
 
-                <select className="rounded-xl border p-4">
-                  <option>Select Course</option>
-                  <option>Singing</option>
-                  <option>Instrumental</option>
-                  <option>Dance</option>
+                {/* Main Course */}
+                <select
+                  value={course}
+                  onChange={(e) => setCourse(e.target.value)}
+                  className="rounded-xl border p-4"
+                >
+                  <option value="">Select Course</option>
+                  <option value="singing">Singing</option>
+                  <option value="instrumental">Instrumental Music</option>
+                  <option value="dance">Dance</option>
                 </select>
+
+                {/* Singing Sub Courses */}
+                {course === "singing" && (
+                  <select className="rounded-xl border p-4">
+                    <option>Select Singing Course</option>
+                    <option>Hindustani Classical Vocal</option>
+                    <option>Light Music</option>
+                    <option>Bhajan & Devotional</option>
+                    <option>Bollywood Singing</option>
+                  </select>
+                )}
+
+                {/* Instrumental Sub Courses */}
+                {course === "instrumental" && (
+                  <select className="rounded-xl border p-4">
+                    <option>Select Instrument</option>
+                    <option>Acoustic Guitar</option>
+                    <option>Electric Guitar</option>
+                    <option>Keyboard</option>
+                    <option>Harmonium</option>
+                    <option>Tabla</option>
+                    <option>Flute</option>
+                    <option>Mrudungam</option>
+                    <option>Violin</option>
+                  </select>
+                )}
+
+                {/* Dance Sub Courses */}
+                {course === "dance" && (
+                  <select className="rounded-xl border p-4">
+                    <option>Select Dance Form</option>
+                    <option>Kathak</option>
+                    <option>Bharatanatyam</option>
+                    <option>Bollywood Dance</option>
+                  </select>
+                )}
 
                 <button
                   type="submit"

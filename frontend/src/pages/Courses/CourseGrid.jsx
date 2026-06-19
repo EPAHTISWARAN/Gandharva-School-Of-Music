@@ -9,18 +9,21 @@ export default function CourseGrid() {
       icon: "🎤",
       description:
         "Indian Classical, Semi-Classical and Bollywood Singing.",
+      link: "/courses/vocal",
     },
     {
       title: "Instrumental Music",
       icon: "🎹",
       description:
-        "Keyboard, Guitar, Tabla, Harmonium, Flute and more.",
+        "Keyboard, Guitar, Tabla, Harmonium, Flute, Mrudungam and Violin.",
+      link: "/courses/instrumental",
     },
     {
       title: "Dance",
       icon: "💃",
       description:
-        "Kathak, Bharatanatyam and Bollywood Dance.",
+        "Kathak, Bharatanatyam and Bollywood Dance and more.",
+      link: "/courses/dance",
     },
   ];
 
@@ -40,6 +43,7 @@ export default function CourseGrid() {
               title={course.title}
               description={course.description}
               icon={course.icon}
+              link={course.link}
             />
           ))}
         </div>
