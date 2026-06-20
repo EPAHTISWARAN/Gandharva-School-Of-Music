@@ -6,8 +6,8 @@ export default function Events() {
   return (
     <>
       <PageBanner
-        title="Events"
-        subtitle="Concerts, performances and workshops."
+        title="Events & Certifications"
+        subtitle="Discover our training programs, prestigious events, workshops, stage performances and internationally recognized music certifications."
       />
 
       <EventGallery />

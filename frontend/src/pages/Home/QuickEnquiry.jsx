@@ -3,7 +3,50 @@ import Container from "../../components/shared/Container";
 import SectionHeading from "../../components/shared/SectionHeading";
 
 export default function QuickEnquiry() {
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [countryCode, setCountryCode] = useState("+91");
+  const [email, setEmail] = useState("");
   const [course, setCourse] = useState("");
+  const [subCourse, setSubCourse] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!name || !phone || !email || !course) {
+      alert("Please fill all required fields.");
+      return;
+    }
+
+    if (phone.length < 6) {
+  alert("Please enter a valid phone number.");
+  return;
+}
+    
+
+    if (
+      (course === "singing" ||
+        course === "instrumental" ||
+        course === "dance") &&
+      !subCourse
+    ) {
+      alert("Please select a course specialization.");
+      return;
+    }
+
+    setShowSuccessModal(true);
+
+setName("");
+setPhone("");
+setEmail("");
+setCourse("");
+setSubCourse("");
+setCountryCode("+91");
+
+    // Add your API / EmailJS / backend submission here
+  };
 
   return (
     <section
@@ -44,42 +87,105 @@ export default function QuickEnquiry() {
                 title="Book A Free Demo"
                 description="Fill out the form and our team will contact you."
               />
+              {successMessage && (
+  <div className="mb-6 rounded-2xl border border-green-300 bg-green-50 p-5 text-center shadow-md">
+    
 
-              <form className="mt-8 grid gap-5">
+    <h2 className="mb-4 text-5xl font-extrabold text-[var(--primary)]">
+  Enquiry Submitted Successfully!
+</h2>
+
+    <p className="mt-2 text-sm leading-relaxed text-green-600">
+      {successMessage}
+    </p>
+  </div>
+)}
+              <form onSubmit={handleSubmit} className="mt-8 grid gap-5">
+
                 <input
                   type="text"
                   placeholder="Full Name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  required
                   className="rounded-xl border p-4"
                 />
 
-                <input
-                  type="tel"
-                  placeholder="Phone Number"
-                  className="rounded-xl border p-4"
-                />
+                <div className="flex gap-3">
+  <select
+    value={countryCode}
+    onChange={(e) => setCountryCode(e.target.value)}
+    className="w-36 rounded-xl border p-4"
+  >
+    <option value="+91">🇮🇳 +91</option>
+    <option value="+1">🇺🇸 +1</option>
+    <option value="+44">🇬🇧 +44</option>
+    <option value="+61">🇦🇺 +61</option>
+    <option value="+971">🇦🇪 +971</option>
+    <option value="+65">🇸🇬 +65</option>
+    <option value="+81">🇯🇵 +81</option>
+    <option value="+49">🇩🇪 +49</option>
+    <option value="+33">🇫🇷 +33</option>
+    <option value="+39">🇮🇹 +39</option>
+    <option value="+86">🇨🇳 +86</option>
+    <option value="+7">🇷🇺 +7</option>
+    <option value="+92">🇵🇰 +92</option>
+    <option value="+880">🇧🇩 +880</option>
+    <option value="+94">🇱🇰 +94</option>
+    <option value="+977">🇳🇵 +977</option>
+  </select>
+
+  <input
+    type="tel"
+    placeholder="Phone Number"
+    value={phone}
+    onChange={(e) =>
+      setPhone(e.target.value.replace(/\D/g, ""))
+    }
+    maxLength={15}
+    required
+    className="flex-1 rounded-xl border p-4"
+  />
+</div>
 
                 <input
                   type="email"
                   placeholder="Email Address"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
                   className="rounded-xl border p-4"
                 />
 
                 {/* Main Course */}
                 <select
                   value={course}
-                  onChange={(e) => setCourse(e.target.value)}
+                  onChange={(e) => {
+                    setCourse(e.target.value);
+                    setSubCourse("");
+                  }}
+                  required
                   className="rounded-xl border p-4"
                 >
                   <option value="">Select Course</option>
                   <option value="singing">Singing</option>
-                  <option value="instrumental">Instrumental Music</option>
+                  <option value="instrumental">
+                    Instrumental Music
+                  </option>
                   <option value="dance">Dance</option>
                 </select>
 
-                {/* Singing Sub Courses */}
+                {/* Singing */}
                 {course === "singing" && (
-                  <select className="rounded-xl border p-4">
-                    <option>Select Singing Course</option>
+                  <select
+                    value={subCourse}
+                    onChange={(e) => setSubCourse(e.target.value)}
+                    required
+                    className="rounded-xl border p-4"
+                  >
+                    <option value="">
+                      Select Singing Course
+                    </option>
                     <option>Hindustani Classical Vocal</option>
                     <option>Light Music</option>
                     <option>Bhajan & Devotional</option>
@@ -87,10 +193,17 @@ export default function QuickEnquiry() {
                   </select>
                 )}
 
-                {/* Instrumental Sub Courses */}
+                {/* Instrumental */}
                 {course === "instrumental" && (
-                  <select className="rounded-xl border p-4">
-                    <option>Select Instrument</option>
+                  <select
+                    value={subCourse}
+                    onChange={(e) => setSubCourse(e.target.value)}
+                    required
+                    className="rounded-xl border p-4"
+                  >
+                    <option value="">
+                      Select Instrument
+                    </option>
                     <option>Acoustic Guitar</option>
                     <option>Electric Guitar</option>
                     <option>Keyboard</option>
@@ -102,10 +215,17 @@ export default function QuickEnquiry() {
                   </select>
                 )}
 
-                {/* Dance Sub Courses */}
+                {/* Dance */}
                 {course === "dance" && (
-                  <select className="rounded-xl border p-4">
-                    <option>Select Dance Form</option>
+                  <select
+                    value={subCourse}
+                    onChange={(e) => setSubCourse(e.target.value)}
+                    required
+                    className="rounded-xl border p-4"
+                  >
+                    <option value="">
+                      Select Dance Form
+                    </option>
                     <option>Kathak</option>
                     <option>Bharatanatyam</option>
                     <option>Bollywood Dance</option>
@@ -114,16 +234,58 @@ export default function QuickEnquiry() {
 
                 <button
                   type="submit"
-                  className="rounded-xl bg-[var(--primary)] px-6 py-4 text-white transition hover:opacity-90"
+                  disabled={
+                    !name ||
+                    !phone ||
+                    !email ||
+                    !course ||
+                    (course && !subCourse)
+                  }
+                  className="rounded-xl bg-[var(--primary)] px-6 py-4 text-white transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
                 >
                   Submit Enquiry
                 </button>
+
               </form>
             </div>
 
           </div>
         </div>
       </Container>
+      {showSuccessModal && (
+  <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/50 backdrop-blur-sm">
+    <div className="mx-4 w-full max-w-3xl rounded-3xl bg-white p-12 text-center shadow-2xl">
+
+      <h2 className="mb-6 text-5xl font-extrabold text-[var(--primary)]">
+        Enquiry Submitted Successfully!
+      </h2>
+
+      <p className="mx-auto max-w-2xl text-xl leading-relaxed text-gray-600">
+        Thank you for your interest in Gandharva School of Music.
+        We have successfully received your enquiry and our team will
+        contact you shortly with course details, batch timings, and
+        admission guidance.
+      </p>
+
+      <button
+        onClick={() => {
+          setShowSuccessModal(false);
+
+          setName("");
+          setPhone("");
+          setEmail("");
+          setCourse("");
+          setSubCourse("");
+          setCountryCode("+91");
+        }}
+        className="mt-10 rounded-2xl bg-[var(--primary)] px-12 py-4 text-xl font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105"
+      >
+        OK
+      </button>
+
+    </div>
+  </div>
+)}
     </section>
   );
 }

@@ -3,8 +3,8 @@ import Container from "../../components/shared/Container";
 
 import dance1 from "../../assets/images/home/dance1.JPG";
 import dance2 from "../../assets/images/home/dance2.JPG";
-import dance3 from "../../assets/images/home/dance3.png";
-import dance4 from "../../assets/images/home/dance4.png";
+import dance3 from "../../assets/images/home/dance3.jpg";
+
 
 export default function Dance() {
   const dancePrograms = [
@@ -26,12 +26,7 @@ export default function Dance() {
       description:
         "Learn energetic Bollywood choreography, stage presence and performance skills.",
     },
-    {
-      title: "Folk Dance",
-      image: dance4,
-      description:
-        "Explore India's vibrant folk dance traditions while improving rhythm, coordination and confidence.",
-    },
+    
   ];
 
   return (
