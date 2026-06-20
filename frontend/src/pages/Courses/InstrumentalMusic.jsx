@@ -2,8 +2,8 @@ import PageBanner from "../../components/shared/PageBanner";
 import Container from "../../components/shared/Container";
 
 import guitar1 from "../../assets/images/home/guitar1.JPG";
-import keyboard1 from "../../assets/images/home/keyboard1.jpeg";
-import tabla1 from "../../assets/images/home/tabla1.jpeg";
+import keyboard1 from "../../assets/images/home/keyboard1.jpg";
+import tabla1 from "../../assets/images/home/tabla1.jpg";
 import harmonium1 from "../../assets/images/home/harmonium1.JPG";
 import flute from "../../assets/images/home/flute.jpg";
 import mrudungam from "../../assets/images/home/mrudungam.webp";
